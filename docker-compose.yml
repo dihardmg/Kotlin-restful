@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  kontlin-resful-api:
+    container_name: "kotlin-restful-api"
+    image: postgres:12
+    ports :
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: kotlin
+      POSTGRES_USER: kotlin
+      POSTGRES_DB: restful-api
