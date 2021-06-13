@@ -75,8 +75,7 @@ Request :
  {
   "name" : "String",
   "price" : "Long",
-  "quantity" : "Interger",
-  "UpdateAt" : "Date"
+  "quantity" : "Interger"
  }
  ```
 

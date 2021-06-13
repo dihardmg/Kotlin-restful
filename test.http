@@ -1,0 +1,43 @@
+### Create data product
+POST http://localhost:8080//api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "A0002",
+  "name" : "MBP 19",
+  "price" : 22000000,
+  "quantity" : 10
+}
+
+### Test Valdation data produdct / invalid
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "",
+  "name" : "",
+  "price" : 0,
+  "quantity" : -10
+}
+
+### Get product by id A0001
+GET http://localhost:8080/api/products/A0002
+Accept: application/json
+
+
+### Get product NotFound
+GET http://localhost:8080/api/products/gkadadata
+Accept: application/json
+
+### update product
+PUT http://localhost:8080/api/products/A0002
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "MBP 20",
+  "price" : 25000000,
+  "quantity" : 20
+}

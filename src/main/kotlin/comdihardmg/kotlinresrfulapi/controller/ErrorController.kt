@@ -1,5 +1,6 @@
 package comdihardmg.kotlinresrfulapi.controller
 
+import comdihardmg.kotlinresrfulapi.error.NotFoundException
 import comdihardmg.kotlinresrfulapi.model.WebResponse
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -15,6 +16,15 @@ class ErrorController {
             code = 400,
             status = "BAD REQUEST",
             data = constrainViolationException.message!!
+        )
+    }
+
+    @ExceptionHandler(value = [NotFoundException::class])
+    fun notFound(notFoundException: NotFoundException):WebResponse<String>{
+        return WebResponse(
+            code = 404,
+            status = "NOT FOUND",
+            data = "Not Found"
         )
     }
 }
