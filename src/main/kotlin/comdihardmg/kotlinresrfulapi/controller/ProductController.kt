@@ -52,4 +52,19 @@ class ProductController(val productService: ProductService) {
         )
 
     }
+
+    @DeleteMapping(
+        value = ["/api/products/{idProduct}"],
+        produces = ["application/json"]
+    )
+    fun deleteProduct(@PathVariable("idProduct") id: String): WebResponse<String>{
+        productService.delete(id)
+        return WebResponse(
+            code = 200,
+            status = "OK",
+            data = id
+
+        )
+
+    }
 }
